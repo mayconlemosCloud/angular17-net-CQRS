@@ -5,6 +5,10 @@ on:
     branches:
       - develop
 
+permissions:
+  contents: write  
+  pull-requests: write     
+
 jobs:
   create-pr:
     runs-on: ubuntu-latest
@@ -22,5 +26,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Auto PR: ${{ env.message }}"
-          branch: auto-pr-branch
-          delete-branch: true
+          base: main
+          title: "Auto PR: ${{ env.message }} <--- develop"
+          body: "This is an auto-generated pull request from develop to main."
+          delete-branch: false
