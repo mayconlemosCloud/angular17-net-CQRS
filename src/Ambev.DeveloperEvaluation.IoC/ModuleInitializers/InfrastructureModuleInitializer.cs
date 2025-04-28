@@ -13,6 +13,9 @@ public class InfrastructureModuleInitializer : IModuleInitializer
     public void Initialize(WebApplicationBuilder builder)
     {
         builder.Services.AddScoped<DbContext>(provider => provider.GetRequiredService<DefaultContext>());
+        builder.Services.AddScoped<DbContext>(provider => provider.GetRequiredService<SalesContext>());
+        builder.Services.AddScoped<ISalesRepository, SalesRepository>();
+        builder.Services.AddScoped<IProductRepository, ProductRepository>();
         builder.Services.AddScoped<IUserRepository, UserRepository>();
     }
 }
