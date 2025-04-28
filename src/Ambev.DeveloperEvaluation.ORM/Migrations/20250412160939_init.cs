@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Ambev.DeveloperEvaluation.ORM.Migrations.Sales
+namespace Ambev.DeveloperEvaluation.ORM.Migrations
 {
     /// <inheritdoc />
     public partial class init : Migration
