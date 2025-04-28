@@ -95,7 +95,6 @@ public class SalesController : BaseController
     }
 
     [HttpGet]
-    [Route("api/sales")]
     public async Task<IActionResult> GetAllSales(CancellationToken cancellationToken)
     {
         var query = new GetAllSalesQuery();

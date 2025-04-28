@@ -8,8 +8,8 @@ import { SalesRepository } from '../../../../repositories/SalesRepository';
 @Component({
   selector: 'app-sales',
   templateUrl: './sales.component.html',
-  imports: [NgFor, FormsModule, NgIf, CurrencyPipe],
-  providers: [CurrencyPipe]
+  //imports: [NgFor, FormsModule, NgIf, CurrencyPipe],
+ // providers: [CurrencyPipe]
 })
 export class SalesComponent implements OnInit {
   constructor(
@@ -18,7 +18,20 @@ export class SalesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.getSales();
+  }
+
+  getSales() {
+    this.salesRepository.list().subscribe(
+      (response) => {
+        console.log(response);
+        this.toastr.success('Vendas recuperadas com sucesso!');
+      },
+      (error) => {
+        console.error(error);
+        this.toastr.error('Erro ao recuperar vendas!');
+      }
+    );
   }
 
 }
