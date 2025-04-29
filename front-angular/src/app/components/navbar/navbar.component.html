@@ -1,15 +1,15 @@
-<nav class="bg-indigo-900 text-white opacity-50">
-  
-  <p *ngIf="isLogged$ | async">Você está logado.</p>
-  <p *ngIf="!(isLogged$ | async)">Você não está logado.</p>
+<nav *ngIf="isLogged$ | async" class="bg-indigo-900 text-white opacity-50">
   <div class="flex justify-end">
     <a [routerLink]="['/dashboard']" routerLinkActive="active"
-       class="px-4 py-2 rounded cursor-pointer border border-white font-semibold shadow transition-all hover:bg-indigo-700 hover:opacity-90 hover:border-indigo-300 hover:brightness-110">
+       class="px-4 py-2 cursor-pointer font-semibold transition-all hover:underline hover:underline-offset-4 duration-200">
       Dashboard
     </a>
     <a [routerLink]="['/gerenciamento']" routerLinkActive="active"
-       class="px-4 py-2 rounded cursor-pointer border border-white font-semibold shadow transition-all hover:bg-indigo-700 hover:opacity-90 hover:border-indigo-300 hover:brightness-110 ml-2">
+       class="px-4 py-2 cursor-pointer font-semibold transition-all hover:underline hover:underline-offset-4 duration-200 ml-2">
       Gerenciamento
+    </a>
+    <a (click)="logout()" class="px-4 py-2 cursor-pointer font-semibold transition-all hover:underline hover:underline-offset-4 duration-200 ml-2">
+      Logout
     </a>
   </div>
 </nav>

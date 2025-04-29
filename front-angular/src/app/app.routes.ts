@@ -8,7 +8,7 @@ export const routes: Routes = [
     path: '', 
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule), 
     canActivate: [AuthGuard] 
-  }, // Protegido pelo guard
+  }, 
   { path: '**', redirectTo: 'login' } 
 ];
 

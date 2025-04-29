@@ -18,8 +18,14 @@ export class LoginComponent {
 
   constructor(private router: Router, private store: Store,
     private authService: AuthService,
-    private toastr: ToastrService, 
-  ) {}
+    private toastr: ToastrService, // Inject ToastrService here
+  ) {
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.store.dispatch(setIsLogged({ isLogged: true }));
+      this.router.navigate(['/dashboard']);
+    }
+  }
 
   onSubmit() {
     if (this.email && this.password) {
@@ -32,11 +38,10 @@ export class LoginComponent {
   onLogin() {
     this.authService.login({ email: this.email, password: this.password }).subscribe(
       (response) => {
-        if (response.token) {
-          localStorage.setItem('authToken', response.token);
+        if (response.data.data.token) {
+          localStorage.setItem('token', response.data.data.token); // Salva o token
           this.store.dispatch(setIsLogged({ isLogged: true })); 
-          this.router.navigate(['/dashboard']);
-        } else {
+          this.router.navigate(['/dashboard']);       
           this.toastr.success('Login Feito com sucesso!');
         }
       },
@@ -46,4 +51,4 @@ export class LoginComponent {
     );   
   } 
 }
-  
+
