@@ -1,358 +1,129 @@
-2025-04-29 23:37:43.782 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (37ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+2025-04-30 02:27:29.435 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (40ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT EXISTS (
     SELECT 1 FROM pg_catalog.pg_class c
     JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
     WHERE n.nspname='public' AND
           c.relname='__EFMigrationsHistory'
 )
-2025-04-29 23:37:43.827 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+2025-04-30 02:27:29.479 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2025-04-30 02:27:29.544 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" character varying(150) NOT NULL,
+    "ProductVersion" character varying(32) NOT NULL,
+    CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY ("MigrationId")
+);
+2025-04-30 02:27:29.548 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2025-04-30 02:27:29.551 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT "MigrationId", "ProductVersion"
 FROM "__EFMigrationsHistory"
 ORDER BY "MigrationId";
-2025-04-29 23:37:43.838 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+2025-04-30 02:27:29.561 +00:00 [INF] Microsoft.EntityFrameworkCore.Migrations Applying migration '20250412161258_init'.
+2025-04-30 02:27:29.579 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Users" (
+    "Id" uuid NOT NULL DEFAULT (gen_random_uuid()),
+    "Username" character varying(50) NOT NULL,
+    "Email" character varying(100) NOT NULL,
+    "Phone" character varying(20) NOT NULL,
+    "Password" character varying(100) NOT NULL,
+    "Role" character varying(20) NOT NULL,
+    "Status" character varying(20) NOT NULL,
+    "CreatedAt" timestamp with time zone NOT NULL,
+    "UpdatedAt" timestamp with time zone,
+    CONSTRAINT "PK_Users" PRIMARY KEY ("Id")
+);
+2025-04-30 02:27:29.580 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250412161258_init', '8.0.10');
+2025-04-30 02:27:29.718 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT EXISTS (
     SELECT 1 FROM pg_catalog.pg_class c
     JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
     WHERE n.nspname='public' AND
           c.relname='__EFMigrationsHistory'
 )
-2025-04-29 23:37:43.842 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT EXISTS (
-    SELECT 1 FROM pg_catalog.pg_class c
-    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
-    WHERE n.nspname='public' AND
-          c.relname='__EFMigrationsHistory'
-)
-2025-04-29 23:37:43.843 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+2025-04-30 02:27:29.721 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT "MigrationId", "ProductVersion"
 FROM "__EFMigrationsHistory"
 ORDER BY "MigrationId";
-2025-04-29 23:37:43.851 +00:00 [INF] Microsoft.EntityFrameworkCore.Migrations No migrations were applied. The database is already up to date.
-2025-04-29 23:37:43.973 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+2025-04-30 02:27:29.730 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT EXISTS (
     SELECT 1 FROM pg_catalog.pg_class c
     JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
     WHERE n.nspname='public' AND
           c.relname='__EFMigrationsHistory'
 )
-2025-04-29 23:37:43.976 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+2025-04-30 02:27:29.734 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2025-04-30 02:27:29.735 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT "MigrationId", "ProductVersion"
 FROM "__EFMigrationsHistory"
 ORDER BY "MigrationId";
-2025-04-29 23:37:43.984 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT EXISTS (
-    SELECT 1 FROM pg_catalog.pg_class c
-    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
-    WHERE n.nspname='public' AND
-          c.relname='__EFMigrationsHistory'
-)
-2025-04-29 23:37:43.988 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT EXISTS (
-    SELECT 1 FROM pg_catalog.pg_class c
-    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
-    WHERE n.nspname='public' AND
-          c.relname='__EFMigrationsHistory'
-)
-2025-04-29 23:37:43.989 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT "MigrationId", "ProductVersion"
-FROM "__EFMigrationsHistory"
-ORDER BY "MigrationId";
-2025-04-29 23:37:43.989 +00:00 [INF] Microsoft.EntityFrameworkCore.Migrations No migrations were applied. The database is already up to date.
-2025-04-29 23:37:44.043 +00:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
-2025-04-29 23:37:44.103 +00:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager Creating key {b4da7faa-cc11-4773-af40-d9daeb5fea7b} with creation date 2025-04-29 23:37:44Z, activation date 2025-04-29 23:37:44Z, and expiration date 2025-07-28 23:37:44Z.
-2025-04-29 23:37:44.187 +00:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://[::]:8080
-2025-04-29 23:37:44.187 +00:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
-2025-04-29 23:37:44.187 +00:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
-2025-04-29 23:37:44.187 +00:00 [INF] Microsoft.Hosting.Lifetime Content root path: /app
-2025-04-29 23:48:15.649 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 OPTIONS http://localhost:8080/api/auth - null null
-2025-04-29 23:48:16.097 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-29 23:48:16.117 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 OPTIONS http://localhost:8080/api/auth - 204 null null 505.5622ms
-2025-04-29 23:48:16.130 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:8080/api/auth - application/json 53
-2025-04-29 23:48:16.139 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-29 23:48:16.269 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Failed to validate the token.
-Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
- ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
-   --- End of inner exception stack trace ---
-2025-04-29 23:48:16.418 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-2025-04-29 23:48:16.433 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Auth.AuthController.AuthenticateUser (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-29 23:48:16.552 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "AuthenticateUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AuthenticateUser(Ambev.DeveloperEvaluation.WebApi.Features.Auth.AuthenticateUserFeature.AuthenticateUserRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Auth.AuthController (Ambev.DeveloperEvaluation.WebApi).
-2025-04-29 23:48:17.772 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (87ms) [Parameters=[@__email_0='?'], CommandType='Text', CommandTimeout='30']
-SELECT u."Id", u."CreatedAt", u."Email", u."Password", u."Phone", u."Role", u."Status", u."UpdatedAt", u."Username"
-FROM "Users" AS u
-WHERE u."Email" = @__email_0
-LIMIT 1
-2025-04-29 23:48:17.791 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Auth.AuthController.AuthenticateUser (Ambev.DeveloperEvaluation.WebApi) in 1235.7099ms
-2025-04-29 23:48:17.792 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Auth.AuthController.AuthenticateUser (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-29 23:48:17.854 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:8080/api/auth - 500 null text/plain; charset=utf-8 1725.1872ms
-2025-04-29 23:48:24.963 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 OPTIONS http://localhost:8080/api/auth - null null
-2025-04-29 23:48:24.964 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-29 23:48:24.965 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 OPTIONS http://localhost:8080/api/auth - 204 null null 2.4259ms
-2025-04-29 23:48:24.968 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:8080/api/auth - application/json 53
-2025-04-29 23:48:24.968 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-29 23:48:24.970 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Failed to validate the token.
-Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
- ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
-   --- End of inner exception stack trace ---
-2025-04-29 23:48:24.970 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-2025-04-29 23:48:24.970 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Auth.AuthController.AuthenticateUser (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-29 23:48:24.971 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "AuthenticateUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AuthenticateUser(Ambev.DeveloperEvaluation.WebApi.Features.Auth.AuthenticateUserFeature.AuthenticateUserRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Auth.AuthController (Ambev.DeveloperEvaluation.WebApi).
-2025-04-29 23:48:24.981 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (4ms) [Parameters=[@__email_0='?'], CommandType='Text', CommandTimeout='30']
-SELECT u."Id", u."CreatedAt", u."Email", u."Password", u."Phone", u."Role", u."Status", u."UpdatedAt", u."Username"
-FROM "Users" AS u
-WHERE u."Email" = @__email_0
-LIMIT 1
-2025-04-29 23:48:24.982 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Auth.AuthController.AuthenticateUser (Ambev.DeveloperEvaluation.WebApi) in 11.5124ms
-2025-04-29 23:48:24.983 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Auth.AuthController.AuthenticateUser (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-29 23:48:24.988 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:8080/api/auth - 500 null text/plain; charset=utf-8 20.2714ms
-2025-04-29 23:55:34.510 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 OPTIONS http://localhost:8080/api/user - null null
-2025-04-29 23:55:34.602 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-29 23:55:34.615 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 OPTIONS http://localhost:8080/api/user - 204 null null 114.846ms
-2025-04-29 23:55:34.626 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:8080/api/user - application/json 53
-2025-04-29 23:55:34.630 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-29 23:55:34.723 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Failed to validate the token.
-Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
- ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
-   --- End of inner exception stack trace ---
-2025-04-29 23:55:34.779 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-2025-04-29 23:55:34.793 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:8080/api/user - 404 0 null 167.0768ms
-2025-04-29 23:55:34.814 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:8080/api/user, Response status code: 404
-2025-04-29 23:55:52.625 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:8080/swagger/index.html - null null
-2025-04-29 23:55:52.917 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:8080/swagger/index.html - 200 null text/html;charset=utf-8 292.112ms
-2025-04-29 23:55:52.943 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:8080/swagger/swagger-ui.css - null null
-2025-04-29 23:55:52.954 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:8080/swagger/index.css - null null
-2025-04-29 23:55:52.964 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:8080/swagger/swagger-ui-bundle.js - null null
-2025-04-29 23:55:52.976 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:8080/swagger/swagger-ui-standalone-preset.js - null null
-2025-04-29 23:55:52.979 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:8080/swagger/index.js - null null
-2025-04-29 23:55:52.980 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:8080/swagger/index.js - 200 null application/javascript;charset=utf-8 0.9684ms
-2025-04-29 23:55:52.995 +00:00 [INF] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware Sending file. Request path: '/index.css'. Physical path: 'N/A'
-2025-04-29 23:55:52.995 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:8080/swagger/index.css - 200 202 text/css 40.8412ms
-2025-04-29 23:55:53.018 +00:00 [INF] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
-2025-04-29 23:55:53.019 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:8080/swagger/swagger-ui-standalone-preset.js - 200 230293 text/javascript 43.0461ms
-2025-04-29 23:55:53.025 +00:00 [INF] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
-2025-04-29 23:55:53.026 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:8080/swagger/swagger-ui.css - 200 152034 text/css 82.8125ms
-2025-04-29 23:55:53.051 +00:00 [INF] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
-2025-04-29 23:55:53.052 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:8080/swagger/swagger-ui-bundle.js - 200 1452753 text/javascript 87.7805ms
-2025-04-29 23:55:53.263 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:8080/swagger/v1/swagger.json - null null
-2025-04-29 23:55:53.527 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:8080/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 263.6893ms
-2025-04-29 23:56:15.587 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 OPTIONS http://localhost:8080/api/users - null null
-2025-04-29 23:56:15.588 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-29 23:56:15.589 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 OPTIONS http://localhost:8080/api/users - 204 null null 0.8354ms
-2025-04-29 23:56:15.590 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:8080/api/users - application/json 53
-2025-04-29 23:56:15.591 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-29 23:56:15.591 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Failed to validate the token.
-Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
- ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
-   --- End of inner exception stack trace ---
-2025-04-29 23:56:15.591 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-2025-04-29 23:56:15.592 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController.CreateUser (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-29 23:56:15.617 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "CreateUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Ambev.DeveloperEvaluation.WebApi.Features.Users.CreateUser.CreateUserRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController (Ambev.DeveloperEvaluation.WebApi).
-2025-04-29 23:56:15.706 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing BadRequestObjectResult, writing value of type 'System.Collections.Generic.List`1[[FluentValidation.Results.ValidationFailure, FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0]]'.
-2025-04-29 23:56:15.743 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController.CreateUser (Ambev.DeveloperEvaluation.WebApi) in 125.2677ms
-2025-04-29 23:56:15.743 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController.CreateUser (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-29 23:56:15.743 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:8080/api/users - 400 null application/json; charset=utf-8 152.5839ms
-2025-04-30 00:34:01.860 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 OPTIONS http://localhost:8080/api/users - null null
-2025-04-30 00:34:02.155 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-30 00:34:02.168 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 OPTIONS http://localhost:8080/api/users - 204 null null 313.2782ms
-2025-04-30 00:34:02.177 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:8080/api/users - application/json 117
-2025-04-30 00:34:02.182 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-30 00:34:02.222 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Failed to validate the token.
-Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
- ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
-   --- End of inner exception stack trace ---
-2025-04-30 00:34:02.263 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-2025-04-30 00:34:02.273 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController.CreateUser (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-30 00:34:02.302 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "CreateUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Ambev.DeveloperEvaluation.WebApi.Features.Users.CreateUser.CreateUserRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController (Ambev.DeveloperEvaluation.WebApi).
-2025-04-30 00:34:02.646 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
-2025-04-30 00:34:02.804 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController.CreateUser (Ambev.DeveloperEvaluation.WebApi) in 478.6955ms
-2025-04-30 00:34:02.804 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController.CreateUser (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-30 00:34:02.809 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:8080/api/users - 400 null application/problem+json; charset=utf-8 631.2491ms
-2025-04-30 00:34:50.905 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:8080/swagger/v1/swagger.json - null null
-2025-04-30 00:34:51.087 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:8080/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 182.3292ms
-2025-04-30 00:35:35.628 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 OPTIONS http://localhost:8080/api/users - null null
-2025-04-30 00:35:35.628 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-30 00:35:35.629 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 OPTIONS http://localhost:8080/api/users - 204 null null 1.471ms
-2025-04-30 00:35:35.632 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:8080/api/users - application/json 117
-2025-04-30 00:35:35.632 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-30 00:35:35.633 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Failed to validate the token.
-Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
- ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
-   --- End of inner exception stack trace ---
-2025-04-30 00:35:35.633 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-2025-04-30 00:35:35.633 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController.CreateUser (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-30 00:35:35.634 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "CreateUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Ambev.DeveloperEvaluation.WebApi.Features.Users.CreateUser.CreateUserRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController (Ambev.DeveloperEvaluation.WebApi).
-2025-04-30 00:35:35.636 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
-2025-04-30 00:35:35.637 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController.CreateUser (Ambev.DeveloperEvaluation.WebApi) in 2.383ms
-2025-04-30 00:35:35.637 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController.CreateUser (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-30 00:35:35.637 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:8080/api/users - 400 null application/problem+json; charset=utf-8 5.5956ms
-2025-04-30 00:40:15.289 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 OPTIONS http://localhost:8080/api/users - null null
-2025-04-30 00:40:15.292 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-30 00:40:15.294 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 OPTIONS http://localhost:8080/api/users - 204 null null 4.9721ms
-2025-04-30 00:40:15.297 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:8080/api/users - application/json 117
-2025-04-30 00:40:15.298 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-30 00:40:15.299 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Failed to validate the token.
-Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
- ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
-   --- End of inner exception stack trace ---
-2025-04-30 00:40:15.300 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-2025-04-30 00:40:15.301 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController.CreateUser (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-30 00:40:15.302 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "CreateUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Ambev.DeveloperEvaluation.WebApi.Features.Users.CreateUser.CreateUserRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController (Ambev.DeveloperEvaluation.WebApi).
-2025-04-30 00:40:15.306 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
-2025-04-30 00:40:15.308 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController.CreateUser (Ambev.DeveloperEvaluation.WebApi) in 5.7764ms
-2025-04-30 00:40:15.308 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController.CreateUser (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-30 00:40:15.308 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:8080/api/users - 400 null application/problem+json; charset=utf-8 10.8409ms
-2025-04-30 00:41:05.345 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 OPTIONS http://localhost:8080/api/users - null null
-2025-04-30 00:41:05.345 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-30 00:41:05.346 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 OPTIONS http://localhost:8080/api/users - 204 null null 1.1391ms
-2025-04-30 00:41:05.349 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:8080/api/users - application/json 117
-2025-04-30 00:41:05.350 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-30 00:41:05.350 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Failed to validate the token.
-Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
- ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
-   --- End of inner exception stack trace ---
-2025-04-30 00:41:05.354 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-2025-04-30 00:41:05.355 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController.CreateUser (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-30 00:41:05.355 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "CreateUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Ambev.DeveloperEvaluation.WebApi.Features.Users.CreateUser.CreateUserRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController (Ambev.DeveloperEvaluation.WebApi).
-2025-04-30 00:41:05.357 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
-2025-04-30 00:41:05.358 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController.CreateUser (Ambev.DeveloperEvaluation.WebApi) in 3.3317ms
-2025-04-30 00:41:05.359 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController.CreateUser (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-30 00:41:05.359 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:8080/api/users - 400 null application/problem+json; charset=utf-8 10.0688ms
-2025-04-30 00:42:17.101 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 OPTIONS http://localhost:8080/api/users - null null
-2025-04-30 00:42:17.102 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-30 00:42:17.103 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 OPTIONS http://localhost:8080/api/users - 204 null null 1.4055ms
-2025-04-30 00:42:17.106 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:8080/api/users - application/json 120
-2025-04-30 00:42:17.107 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-30 00:42:17.107 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Failed to validate the token.
-Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
- ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
-   --- End of inner exception stack trace ---
-2025-04-30 00:42:17.108 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-2025-04-30 00:42:17.109 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController.CreateUser (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-30 00:42:17.109 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "CreateUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(Ambev.DeveloperEvaluation.WebApi.Features.Users.CreateUser.CreateUserRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController (Ambev.DeveloperEvaluation.WebApi).
-2025-04-30 00:42:17.444 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (35ms) [Parameters=[@__email_0='?'], CommandType='Text', CommandTimeout='30']
-SELECT u."Id", u."CreatedAt", u."Email", u."Password", u."Phone", u."Role", u."Status", u."UpdatedAt", u."Username"
-FROM "Users" AS u
-WHERE u."Email" = @__email_0
-LIMIT 1
-2025-04-30 00:42:18.294 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (59ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?', @p3='?', @p4='?', @p5='?', @p6='?' (DbType = DateTime), @p7='?'], CommandType='Text', CommandTimeout='30']
-INSERT INTO "Users" ("CreatedAt", "Email", "Password", "Phone", "Role", "Status", "UpdatedAt", "Username")
-VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
-RETURNING "Id";
-2025-04-30 00:42:18.333 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing CreatedResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[Ambev.DeveloperEvaluation.WebApi.Features.Users.CreateUser.CreateUserResponse, Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
-2025-04-30 00:42:18.355 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController.CreateUser (Ambev.DeveloperEvaluation.WebApi) in 1246.0424ms
-2025-04-30 00:42:18.355 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Users.UsersController.CreateUser (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-30 00:42:18.357 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:8080/api/users - 201 null application/json; charset=utf-8 1250.6384ms
-2025-04-30 00:42:26.940 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 OPTIONS http://localhost:8080/api/auth - null null
-2025-04-30 00:42:26.940 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-30 00:42:26.942 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 OPTIONS http://localhost:8080/api/auth - 204 null null 1.9083ms
-2025-04-30 00:42:26.944 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:8080/api/auth - application/json 53
-2025-04-30 00:42:26.945 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-30 00:42:26.945 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Failed to validate the token.
-Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
- ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
-   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
-   --- End of inner exception stack trace ---
-2025-04-30 00:42:26.945 +00:00 [INF] Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
-The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
-2025-04-30 00:42:26.946 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Auth.AuthController.AuthenticateUser (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-30 00:42:26.946 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "AuthenticateUser", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AuthenticateUser(Ambev.DeveloperEvaluation.WebApi.Features.Auth.AuthenticateUserFeature.AuthenticateUserRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Auth.AuthController (Ambev.DeveloperEvaluation.WebApi).
-2025-04-30 00:42:26.957 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (3ms) [Parameters=[@__email_0='?'], CommandType='Text', CommandTimeout='30']
-SELECT u."Id", u."CreatedAt", u."Email", u."Password", u."Phone", u."Role", u."Status", u."UpdatedAt", u."Username"
-FROM "Users" AS u
-WHERE u."Email" = @__email_0
-LIMIT 1
-2025-04-30 00:42:27.158 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing OkObjectResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[Ambev.DeveloperEvaluation.WebApi.Features.Auth.AuthenticateUserFeature.AuthenticateUserResponse, Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
-2025-04-30 00:42:27.161 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Auth.AuthController.AuthenticateUser (Ambev.DeveloperEvaluation.WebApi) in 215.3884ms
-2025-04-30 00:42:27.162 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Auth.AuthController.AuthenticateUser (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-30 00:42:27.162 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:8080/api/auth - 200 null application/json; charset=utf-8 217.1901ms
-2025-04-30 00:42:35.881 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 OPTIONS http://localhost:8080/api/sales - null null
-2025-04-30 00:42:35.883 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-30 00:42:35.883 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 OPTIONS http://localhost:8080/api/sales - 204 null null 1.5917ms
-2025-04-30 00:42:35.884 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 GET http://localhost:8080/api/sales - null null
-2025-04-30 00:42:35.886 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-30 00:42:35.945 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetAllSales (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-30 00:42:35.956 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "GetAllSales", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllSales(System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
-2025-04-30 00:42:36.161 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (47ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT s."Id", s."Branch", s."CreatedAt", s."CustomerId", s."Discount", s."IsCancelled", s."TotalAmount", s."UpdatedAt", c."Id", t."Id", t."ProductId", t."Quantity", t."SaleId", t."Id0", t."Name", t."UnitPrice", c."Name"
-FROM "Sales" AS s
-INNER JOIN "Customers" AS c ON s."CustomerId" = c."Id"
-LEFT JOIN (
-    SELECT s0."Id", s0."ProductId", s0."Quantity", s0."SaleId", p."Id" AS "Id0", p."Name", p."UnitPrice"
-    FROM "SaleItems" AS s0
-    INNER JOIN "Products" AS p ON s0."ProductId" = p."Id"
-) AS t ON s."Id" = t."SaleId"
-ORDER BY s."Id", c."Id", t."Id"
-2025-04-30 00:42:36.178 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor Executing OkObjectResult, writing value of type 'Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[Ambev.DeveloperEvaluation.WebApi.Common.ApiResponseWithData`1[[System.Collections.Generic.List`1[[Ambev.DeveloperEvaluation.WebApi.Features.Sales.GetAllSales.GetAllSalesResponse, Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Ambev.DeveloperEvaluation.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
-2025-04-30 00:42:36.189 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetAllSales (Ambev.DeveloperEvaluation.WebApi) in 232.9052ms
-2025-04-30 00:42:36.189 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.GetAllSales (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-30 00:42:36.189 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 GET http://localhost:8080/api/sales - 200 null application/json; charset=utf-8 304.5391ms
-2025-04-30 00:43:00.815 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 OPTIONS http://localhost:8080/api/sales - null null
-2025-04-30 00:43:00.815 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-30 00:43:00.815 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 OPTIONS http://localhost:8080/api/sales - 204 null null 0.9766ms
-2025-04-30 00:43:00.819 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request starting HTTP/1.1 POST http://localhost:8080/api/sales - application/json 148
-2025-04-30 00:43:00.819 +00:00 [INF] Microsoft.AspNetCore.Cors.Infrastructure.CorsService CORS policy execution successful.
-2025-04-30 00:43:00.826 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executing endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-30 00:43:00.830 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Route matched with {action = "CreateSale", controller = "Sales"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateSale(Ambev.DeveloperEvaluation.WebApi.Features.Sales.CreateSales.CreateSalesRequest, System.Threading.CancellationToken) on controller Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController (Ambev.DeveloperEvaluation.WebApi).
-2025-04-30 00:43:00.897 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-SELECT p."Id", p."Name", p."UnitPrice"
-FROM "Products" AS p
-2025-04-30 00:43:00.902 +00:00 [INF] Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker Executed action Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi) in 71.0153ms
-2025-04-30 00:43:00.902 +00:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware Executed endpoint 'Ambev.DeveloperEvaluation.WebApi.Features.Sales.SalesController.CreateSale (Ambev.DeveloperEvaluation.WebApi)'
-2025-04-30 00:43:00.921 +00:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics Request finished HTTP/1.1 POST http://localhost:8080/api/sales - 500 null text/plain; charset=utf-8 102.6208ms
+2025-04-30 02:27:29.736 +00:00 [INF] Microsoft.EntityFrameworkCore.Migrations Applying migration '20250412160939_init'.
+2025-04-30 02:27:29.756 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Customers" (
+    "Id" uuid NOT NULL,
+    "Name" character varying(100) NOT NULL,
+    CONSTRAINT "PK_Customers" PRIMARY KEY ("Id")
+);
+2025-04-30 02:27:29.760 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Products" (
+    "Id" uuid NOT NULL,
+    "Name" character varying(100) NOT NULL,
+    "UnitPrice" numeric(18,2) NOT NULL,
+    CONSTRAINT "PK_Products" PRIMARY KEY ("Id")
+);
+2025-04-30 02:27:29.768 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "Sales" (
+    "Id" uuid NOT NULL,
+    "CreatedAt" timestamp with time zone,
+    "UpdatedAt" timestamp with time zone,
+    "CustomerId" uuid NOT NULL,
+    "TotalAmount" numeric(18,2) NOT NULL,
+    "Discount" numeric(18,2) NOT NULL,
+    "Branch" text,
+    "IsCancelled" boolean NOT NULL,
+    CONSTRAINT "PK_Sales" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_Sales_Customers_CustomerId" FOREIGN KEY ("CustomerId") REFERENCES "Customers" ("Id") ON DELETE RESTRICT
+);
+2025-04-30 02:27:29.773 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE "SaleItems" (
+    "Id" uuid NOT NULL,
+    "ProductId" uuid NOT NULL,
+    "Quantity" integer NOT NULL,
+    "SaleId" uuid,
+    CONSTRAINT "PK_SaleItems" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_SaleItems_Products_ProductId" FOREIGN KEY ("ProductId") REFERENCES "Products" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_SaleItems_Sales_SaleId" FOREIGN KEY ("SaleId") REFERENCES "Sales" ("Id") ON DELETE CASCADE
+);
+2025-04-30 02:27:29.777 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_SaleItems_ProductId" ON "SaleItems" ("ProductId");
+2025-04-30 02:27:29.780 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_SaleItems_SaleId" ON "SaleItems" ("SaleId");
+2025-04-30 02:27:29.784 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX "IX_Sales_CustomerId" ON "Sales" ("CustomerId");
+2025-04-30 02:27:29.784 +00:00 [INF] Microsoft.EntityFrameworkCore.Database.Command Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250412160939_init', '8.0.10');
+2025-04-30 02:27:29.836 +00:00 [INF] Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckService Health Check enabled at: '/health'
+2025-04-30 02:27:29.934 +00:00 [INF] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager Creating key {ee9e7d5f-5571-49f7-8e1a-ca50ccff9518} with creation date 2025-04-30 02:27:29Z, activation date 2025-04-30 02:27:29Z, and expiration date 2025-07-29 02:27:29Z.
+2025-04-30 02:27:30.027 +00:00 [INF] Microsoft.Hosting.Lifetime Now listening on: http://[::]:8080
+2025-04-30 02:27:30.027 +00:00 [INF] Microsoft.Hosting.Lifetime Application started. Press Ctrl+C to shut down.
+2025-04-30 02:27:30.028 +00:00 [INF] Microsoft.Hosting.Lifetime Hosting environment: Development
+2025-04-30 02:27:30.028 +00:00 [INF] Microsoft.Hosting.Lifetime Content root path: /app

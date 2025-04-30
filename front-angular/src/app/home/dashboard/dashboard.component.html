@@ -1,2 +1,58 @@
-<h1 class="text-2xl font-bold mb-4">Dashboard</h1>
+<h1 class="text-4xl font-extrabold mb-8 text-gray-900 tracking-tight">Painel de Controle - Visão Geral</h1>
+
+<!-- Resumo -->
+<div class="mb-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+  <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg shadow-md border border-blue-200">
+    <p class="text-blue-600 text-sm font-medium uppercase tracking-wide">Total de Vendas</p>
+    <p class="text-3xl font-extrabold text-blue-800">R$ {{ totalSales }}</p>
+  </div>
+  <div class="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-lg shadow-md border border-green-200">
+    <p class="text-green-600 text-sm font-medium uppercase tracking-wide">Total de Descontos</p>
+    <p class="text-3xl font-extrabold text-green-800">R$ {{ totalDiscounts }}</p>
+  </div>
+  <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 p-6 rounded-lg shadow-md border border-yellow-200">
+    <p class="text-yellow-600 text-sm font-medium uppercase tracking-wide">Número de Pedidos</p>
+    <p class="text-3xl font-extrabold text-yellow-800">{{ totalOrders }}</p>
+  </div>
+</div>
+
+<!-- Insights -->
+<div class="mb-12">
+  <h2 class="text-3xl font-bold mb-8 text-gray-900 tracking-tight border-b-2 border-gray-200 pb-2">Insights</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Produtos mais vendidos -->
+    <div class="bg-gradient-to-r from-indigo-50 to-indigo-100 p-6 rounded-lg shadow-lg border border-indigo-200 hover:shadow-xl transition-shadow">
+      <h3 class="text-xl font-semibold text-indigo-800 mb-4">Produtos Mais Vendidos</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li *ngFor="let product of topProducts" class="text-gray-700">
+          <span class="font-medium text-indigo-900">{{ product.name }}</span> - {{ product.quantity }} vendidos
+        </li>
+      </ul>
+    </div>
+
+    <!-- Clientes com maior volume de compras -->
+    <div class="bg-gradient-to-r from-teal-50 to-teal-100 p-6 rounded-lg shadow-lg border border-teal-200 hover:shadow-xl transition-shadow">
+      <h3 class="text-xl font-semibold text-teal-800 mb-4">Top Clientes</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li *ngFor="let customer of topCustomers" class="text-gray-700">
+          <span class="font-medium text-teal-900">{{ customer.name }}</span> - R$ {{ customer.totalAmount }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- Filiais com maior faturamento -->
+    <div class="bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-lg shadow-lg border border-purple-200 hover:shadow-xl transition-shadow">
+      <h3 class="text-xl font-semibold text-purple-800 mb-4">Top Filiais</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li *ngFor="let branch of topBranches" class="text-gray-700">
+          <span class="font-medium text-purple-900">{{ branch.branch }}</span> - R$ {{ branch.totalAmount }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
 
