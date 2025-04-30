@@ -31,8 +31,18 @@
             <label for="quantity" class="block text-sm font-medium text-gray-700">Quantity</label>
             <input id="quantity" name="quantity" type="number" [(ngModel)]="item.quantity" class="w-full border border-gray-300 rounded-lg p-2 focus:ring-indigo-500 focus:border-indigo-500" required>
         </div>
+        <div>
+            <label for="items" class="block text-sm font-medium text-gray-700">Items</label>
+            <div *ngFor="let item of data.items; let i = index" class="flex items-center gap-4">
+                <select [(ngModel)]="item.productId" name="productId-{{i}}" class="w-full border border-gray-300 rounded-lg p-2 focus:ring-indigo-500 focus:border-indigo-500" required>
+                    <option *ngFor="let product of products" [value]="product.id">{{ product.name }}</option>
+                </select>
+                <input [(ngModel)]="item.quantity" name="quantity-{{i}}" type="number" class="w-20 border border-gray-300 rounded-lg p-2 focus:ring-indigo-500 focus:border-indigo-500" required>
+                <button type="button" (click)="removeItem(i)" class="text-red-600 hover:underline">Remove</button>
+            </div>
+            <button type="button" (click)="addItem()" class="text-indigo-600 hover:underline mt-2">Add Item</button>
+        </div>
         <div class="flex gap-4">
-            <button type="button" (click)="addItem()" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500">Add Item</button>
             <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 focus:ring-2 focus:ring-green-500">Save</button>
         </div>
     </form>
@@ -46,6 +56,7 @@
                     <th class="border border-gray-200 px-4 py-2">Customer</th>
                     <th class="border border-gray-200 px-4 py-2">Total</th>
                     <th class="border border-gray-200 px-4 py-2">Discount</th>
+                    <th class="border border-gray-200 px-4 py-2">Items</th>
                     <th class="border border-gray-200 px-4 py-2">Actions</th>
                 </tr>
             </thead>
@@ -55,6 +66,13 @@
                     <td class="border border-gray-200 px-4 py-2">{{ data.customer.name }}</td>
                     <td class="border border-gray-200 px-4 py-2">{{ data.totalAmount }}</td>
                     <td class="border border-gray-200 px-4 py-2">{{ data.discount }}</td>
+                    <td class="border border-gray-200 px-4 py-2">
+                        <ul>
+                            <li *ngFor="let item of data.items">
+                                {{ item.product.name }} (x{{ item.quantity }})
+                            </li>
+                        </ul>
+                    </td>
                     <td class="border border-gray-200 px-4 py-2 flex gap-2">
                         <button (click)="edit(data)" class="bg-yellow-500 text-white px-3 py-1 rounded-lg hover:bg-yellow-600 focus:ring-2 focus:ring-yellow-400">Edit</button>
                         <button (click)="delete(data.id)" class="bg-red-600 text-white px-3 py-1 rounded-lg hover:bg-red-700 focus:ring-2 focus:ring-red-500">Delete</button>
