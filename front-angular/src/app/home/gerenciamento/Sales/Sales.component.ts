@@ -1,37 +1,77 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
-import { NgFor, NgIf } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
-import { DecimalPipe, CurrencyPipe } from '@angular/common';
-import { SalesRepository } from '../../../../repositories/SalesRepository';
+import { NgFor } from '@angular/common';
+import { SalesService } from '../../../../services/SalesService';
+import { map } from 'rxjs/operators';
+
+interface SalesResponse {
+  data: {
+    data: any[];
+    success: boolean;
+    message: string;
+    errors: any[];
+  };
+  success: boolean;
+  message: string;
+  errors: any[];
+}
 
 @Component({
   selector: 'app-sales',
-  templateUrl: './sales.component.html',
-  //imports: [NgFor, FormsModule, NgIf, CurrencyPipe],
- // providers: [CurrencyPipe]
+  templateUrl: './Sales.component.html',
+  imports: [FormsModule, NgFor],
 })
 export class SalesComponent implements OnInit {
-  constructor(
-    private salesRepository: SalesRepository,
-    private toastr: ToastrService
-  ) {}
+  datas: any[] = [];
+  data: any = { branch: '', customerId: '', items: [] };
+  item: any = { productId: '', quantity: 0 };
+
+  constructor(private salesService: SalesService) {}
 
   ngOnInit(): void {
-    this.getSales();
+    this.loadDatas();
   }
 
-  getSales() {
-    this.salesRepository.list().subscribe(
-      (response) => {
-        console.log(response);
-        this.toastr.success('Vendas recuperadas com sucesso!');
-      },
-      (error) => {
-        console.error(error);
-        this.toastr.error('Erro ao recuperar vendas!');
-      }
-    );
+  loadDatas(): void {
+    this.salesService.list()
+      .pipe(
+        map((response: any) => response.data.data)
+      )
+      .subscribe((data: any[]) => {
+        console.log(data);
+        this.datas = data;
+      });
   }
 
+  addItem(): void {
+    if (this.item.productId && this.item.quantity > 0) {
+      this.data.items.push({ ...this.item });
+      this.item = { productId: '', quantity: 0 };
+    }
+  }
+
+  onSubmit(): void {
+    if (this.data.id) {
+      this.salesService.update(this.data.id, this.data).subscribe(() => {
+        this.loadDatas();
+        this.data = { branch: '', customerId: '', items: [] };
+      });
+    } else {
+      this.salesService.create(this.data).subscribe(() => {
+        this.loadDatas();
+        this.data = { branch: '', customerId: '', items: [] };
+      });
+    }
+  }
+
+  edit(data: any): void {
+    this.data = { ...data, items: [...data.items] };
+  }
+
+  delete(id: string): void {
+    this.salesService.delete(id).subscribe(() => {
+      this.loadDatas();
+    });
+  }
 }

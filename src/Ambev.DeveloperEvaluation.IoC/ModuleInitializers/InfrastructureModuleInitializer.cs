@@ -14,6 +14,19 @@ public class InfrastructureModuleInitializer : IModuleInitializer
     {
         builder.Services.AddScoped<DbContext>(provider => provider.GetRequiredService<DefaultContext>());
         builder.Services.AddScoped<DbContext>(provider => provider.GetRequiredService<SalesContext>());
+
+    
+        var serviceProvider = builder.Services.BuildServiceProvider();
+
+        using (var scope = serviceProvider.CreateScope())
+        {
+            var defaultContext = scope.ServiceProvider.GetRequiredService<DefaultContext>();
+            defaultContext.Database.Migrate();
+
+            var salesContext = scope.ServiceProvider.GetRequiredService<SalesContext>();
+            salesContext.Database.Migrate();
+        }
+
         builder.Services.AddScoped<ISalesRepository, SalesRepository>();
         builder.Services.AddScoped<IProductRepository, ProductRepository>();
         builder.Services.AddScoped<IUserRepository, UserRepository>();

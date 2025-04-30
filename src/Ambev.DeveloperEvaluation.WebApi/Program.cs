@@ -95,11 +95,10 @@ public class Program
                             .AllowAnyMethod();
                     });
                 });
-
+                
             var app = builder.Build();
+
             app.UseMiddleware<ValidationExceptionMiddleware>();
-
-
 
             if (app.Environment.IsDevelopment())
             {

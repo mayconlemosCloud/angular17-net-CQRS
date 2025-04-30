@@ -7,9 +7,9 @@
           type="email"
           id="email"
           name="email"
-          [(ngModel)]="email"
+          [(ngModel)]="form.email"
           required
-          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-400 focus:border-gray-400"
         />
       </div>
       <div class="mb-4">
@@ -18,17 +18,89 @@
           type="password"
           id="password"
           name="password"
-          [(ngModel)]="password"
+          [(ngModel)]="form.password"
           required
-          class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+          class="mt-1 block w-full px-3 py-2 border border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-gray-400 focus:border-gray-400"
         />
       </div>
-      <button
-        type="submit"
-        class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-      >
-        Login
-      </button>
+
+      <!-- Campos adicionais para criar conta -->
+      <div *ngIf="showCreateAccountModal">
+        <div class="mb-4">
+          <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            [(ngModel)]="form.username"
+            required
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-400 focus:border-gray-400"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            [(ngModel)]="form.phone"
+            required
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-400 focus:border-gray-400"
+          />
+        </div>
+        <div class="mb-4 flex items-center">
+          <input
+            type="checkbox"
+            id="status"
+            name="status"
+            [(ngModel)]="form.status"
+            class="mr-2"
+          />
+          <label for="status" class="text-sm font-medium text-gray-700">Ativo</label>
+        </div>
+        <div class="mb-4">
+          <label for="role" class="block text-sm font-medium text-gray-700">Role</label>
+          <select
+            id="role"
+            name="role"
+            [(ngModel)]="form.role"
+            required
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-400 focus:border-gray-400"
+          >
+            <option [value]="0">None</option>
+            <option [value]="1">Customer</option>
+            <option [value]="2">Manager</option>
+            <option [value]="3">Admin</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirme a Senha</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            [(ngModel)]="form.confirmPassword"
+            required
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-400 focus:border-gray-400"
+          />
+        </div>
+      </div>
+
+      <div class="flex space-x-4">
+        <button
+          type="submit"
+          class="w-full bg-gray-400 text-white py-2 px-4 rounded-md hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+        >
+          {{ showCreateAccountModal ? 'Criar Conta' : 'Login' }}
+        </button>
+        <button
+          type="button"
+          (click)="toggleCreateAccount()"
+          class="w-full bg-gray-300 text-white py-2 px-4 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
+        >
+          {{ showCreateAccountModal ? 'Voltar' : 'Criar Conta' }}
+        </button>
+      </div>
     </form>
   </div>
 </div>

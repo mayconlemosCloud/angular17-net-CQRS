@@ -1,25 +1,23 @@
 INSERT INTO "Products" ("Id", "Name", "UnitPrice") VALUES
-    (gen_random_uuid(), 'Product A', 10.00),
-    (gen_random_uuid(), 'Product B', 20.00),
-    (gen_random_uuid(), 'Product C', 30.00)
+    ('11111111-1111-1111-1111-111111111111', 'Budweiser Original', 10.00),
+    ('22222222-2222-2222-2222-222222222222', 'Budweiser Zero', 20.00),
+    ('33333333-3333-3333-3333-333333333333', 'Stella Artois Premium', 30.00)
 ON CONFLICT DO NOTHING;
 
 INSERT INTO "Customers" ("Id", "Name") VALUES
-    (gen_random_uuid(), 'Customer 1'),
-    (gen_random_uuid(), 'Customer 2'),
-    (gen_random_uuid(), 'Customer 3')
+    ('44444444-4444-4444-4444-444444444444', 'Budweiser'),
+    ('55555555-5555-5555-5555-555555555555', 'Stella Artois'),
+    ('77777777-7777-7777-7777-777777777777', 'Skol')
 ON CONFLICT DO NOTHING;
 
 INSERT INTO "Sales" ("Id", "CreatedAt", "CustomerId", "Branch", "TotalAmount", "Discount", "IsCancelled") VALUES
-    (gen_random_uuid(), NOW(), (SELECT "Id" FROM "Customers" LIMIT 1 OFFSET 0), 'Branch A', 100.00, 10.00, FALSE),
-    (gen_random_uuid(), NOW(), (SELECT "Id" FROM "Customers" LIMIT 1 OFFSET 1), 'Branch B', 200.00, 20.00, FALSE),
-    (gen_random_uuid(), NOW(), (SELECT "Id" FROM "Customers" LIMIT 1 OFFSET 2), 'Branch C', 300.00, 30.00, TRUE)
+    ('77777777-7777-7777-7777-777777777777', NOW(), '55555555-5555-5555-5555-555555555555', 'Branch A', 100.00, 10.00, FALSE),
+    ('88888888-8888-8888-8888-888888888888', NOW(), '77777777-7777-7777-7777-777777777777', 'Branch B', 200.00, 20.00, FALSE),
+    ('99999999-9999-9999-9999-999999999999', NOW(), '44444444-4444-4444-4444-444444444444', 'Branch C', 300.00, 30.00, TRUE)
 ON CONFLICT DO NOTHING;
 
-INSERT INTO "SaleItems" ("Id", "SaleId", "ProductId", "Quantity", "UnitPrice") VALUES
-    (gen_random_uuid(), (SELECT "Id" FROM "Sales" LIMIT 1 OFFSET 0), (SELECT "Id" FROM "Products" LIMIT 1 OFFSET 0), 2, 10.00),
-    (gen_random_uuid(), (SELECT "Id" FROM "Sales" LIMIT 1 OFFSET 1), (SELECT "Id" FROM "Products" LIMIT 1 OFFSET 1), 3, 20.00),
-    (gen_random_uuid(), (SELECT "Id" FROM "Sales" LIMIT 1 OFFSET 2), (SELECT "Id" FROM "Products" LIMIT 1 OFFSET 2), 4, 30.00)
+INSERT INTO "SaleItems" ("Id", "ProductId", "Quantity", "SaleId") VALUES
+    ('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', '22222222-2222-2222-2222-222222222222', 2, '77777777-7777-7777-7777-777777777777'),
+    ('bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', '33333333-3333-3333-3333-333333333333', 3, '88888888-8888-8888-8888-888888888888'),
+    ('cccccccc-cccc-cccc-cccc-cccccccccccc', '11111111-1111-1111-1111-111111111111', 2, '99999999-9999-9999-9999-999999999999')
 ON CONFLICT DO NOTHING;
-
-

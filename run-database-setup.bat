@@ -73,6 +73,9 @@ docker exec -i ambev_developer_evaluation_database psql -U developer -d develope
 echo Showing data from Customers table...
 docker exec -i ambev_developer_evaluation_database psql -U developer -d developer_evaluation -c "SELECT * FROM \"Customers\";"
 
+echo Showing data from SaleItems table...
+docker exec -i ambev_developer_evaluation_database psql -U developer -d developer_evaluation -c "SELECT * FROM \"SaleItems\";"
+
 echo Tudo pronto! O script foi ajustado para executar as migrações no container.
 
 REM evitar fechamento automático

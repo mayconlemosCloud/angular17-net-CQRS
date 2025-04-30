@@ -27,7 +27,11 @@ public class SalesRepository : ISalesRepository
     /// <returns>List of sales</returns>
     public async Task<List<Sale>> GetAllAsync(CancellationToken cancellationToken = default)
     {
-        return await _context.Sales.ToListAsync(cancellationToken);
+        return await _context.Sales
+            .Include(s => s.Items)
+            .ThenInclude(i => i.Product) // Include product data
+            .Include(s => s.Customer)
+            .ToListAsync(cancellationToken);
     }
 
     /// <summary>
@@ -38,7 +42,11 @@ public class SalesRepository : ISalesRepository
     /// <returns>The sale if found, otherwise null</returns>
     public async Task<Sale?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
-        return await _context.Sales.FirstOrDefaultAsync(s => s.Id == id, cancellationToken);
+        return await _context.Sales
+            .Include(s => s.Items)
+            .ThenInclude(i => i.Product) // Include product data
+            .Include(s => s.Customer)   // Include customer data
+            .FirstOrDefaultAsync(s => s.Id == id, cancellationToken);
     }
 
     /// <summary>

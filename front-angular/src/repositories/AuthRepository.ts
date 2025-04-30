@@ -10,10 +10,15 @@ import { environment } from '../environments/environment';
 })
 export class AuthRepository {
   private rota = `${environment.apiUrl}/auth`;
+  private rotaUser = `${environment.apiUrl}/users`;
   constructor(private http: HttpClient) {}
 
   login(data: any): Observable<any> {
     return this.http.post<any>(`${this.rota}`, data);
+  }
+
+  createAccount(data: any): Observable<any> {
+    return this.http.post<any>(`${this.rotaUser}`, data);
   }
 
 }

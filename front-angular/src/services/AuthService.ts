@@ -17,4 +17,8 @@ export class AuthService  {
   login(data: AuthRepositoryInterface): Observable<any> {
     return this.repository.login(data);
   }
+
+  createAccount(data: any): Observable<any> {
+    return this.repository.createAccount(data);
+  }
 }

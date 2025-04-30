@@ -1,20 +1,36 @@
-# Use Node.js 18
-FROM node:18.19.0
+# Use Node.js 18 for building the Angular app
+FROM node:18.19.0 AS build
 
-# Install Angular CLI globally
-RUN npm install -g @angular/cli
+# Define o diretório de trabalho no container
+WORKDIR /app
 
-# Set up the working directory
-WORKDIR /front-angular
+# Copia o projeto Angular para o container
+COPY . ./
 
-# Copy project files into the container
-COPY . .
+# Copy package.json and package-lock.json to install dependencies
+COPY package.json package-lock.json ./
 
 # Install dependencies
 RUN npm install
 
-# Command to serve the Angular app
-CMD ng serve --host 0.0.0.0 --port 4200
+# Copy the entire Angular project to the container
+COPY . ./
 
-# Expose the Angular development server port
-EXPOSE 4200
+# Build the Angular app
+RUN npm run build
+
+# Use Nginx to serve the Angular app
+FROM nginx:1.21.6-alpine
+
+# Copy the built Angular app from the previous stage
+COPY --from=build /app/dist/front-angular/browser /usr/share/nginx/html
+
+# Copy the custom Nginx configuration file to the container
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
+
